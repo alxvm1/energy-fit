@@ -1,0 +1,18 @@
+/* Main Page Block */
+.main-page {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Main Page Container */
+.main-page__container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,118 @@
+/* About Us Block */
+.about-us {
+  width: 100%;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .about-us {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    gap: 1.5rem;
+  }
+}
+
+/* About Us Title */
+.about-us__title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xl);
+  line-height: 1.1;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .about-us__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* About Us Content */
+.about-us__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .about-us__content {
+    gap: var(--space-md);
+  }
+}
+
+/* About Us Text */
+.about-us__text {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color-secondary);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .about-us__text {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+}
+
+/* About Us Button Wrapper */
+.about-us__button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--space-sm);
+}
+
+/* About Us Button */
+.about-us__button {
+  width: 100%;
+  max-width: 8.125rem;
+  height: 2.1875rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .about-us__button {
+    max-width: 10rem;
+    height: 2.5rem;
+    font-size: var(--font-size-base);
+  }
+}
+
+.about-us__button:hover {
+  opacity: 0.9;
+}
+
+.about-us__button:active {
+  opacity: 0.8;
+}
+
+/* About Us Button Text */
+.about-us__button-text {
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .about-us__button-text {
+    font-size: var(--font-size-base);
+  }
+}
+

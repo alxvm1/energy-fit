@@ -1,0 +1,252 @@
+/* Custom Card Block */
+.custom-card {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+  background-color: var(--background-color-card);
+  box-sizing: border-box;
+  overflow: visible;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .custom-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 957px;
+    height: 530px;
+  }
+}
+
+/* Custom Card Modifiers */
+.custom-card--active {
+  opacity: 1;
+}
+
+.custom-card--inactive {
+  opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+  .custom-card--inactive {
+    opacity: 0.4;
+  }
+}
+
+/* Custom Card Body */
+.custom-card__body {
+  overflow: hidden;
+  padding: 0;
+  padding-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .custom-card__body {
+    padding: 50px 0 50px 50px;
+    width: 50%;
+    box-sizing: border-box;
+  }
+}
+
+/* Custom Card Image */
+.custom-card__image {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  width: clamp(270px, 50%, 430px);
+  height: clamp(270px, 50%, 430px);
+  max-width: 100%;
+  flex-shrink: 0;
+  border-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .custom-card__image {
+    padding: var(--space-md);
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-card__image {
+    padding: 0;
+  }
+}
+
+/* Custom Card Header */
+.custom-card__header {
+  padding: var(--space-md);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .custom-card__header {
+    padding: 1.5rem;
+    width: 50%;
+  }
+}
+
+/* Custom Card Title */
+.custom-card__title {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xl);
+  line-height: 1.1;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--text-color);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .custom-card__title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Custom Card Subtitle */
+.custom-card__subtitle {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.16;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .custom-card__subtitle {
+    font-size: var(--font-size-lg);
+    line-height: 1.4;
+  }
+}
+
+/* Custom Card Description */
+.custom-card__description {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .custom-card__description {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+}
+
+/* Custom Card Dress Code */
+.custom-card__dress-code {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+/* Custom Card Dress Code Label */
+.custom-card__dress-code-label {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) 0.75rem;
+  width: fit-content;
+}
+
+/* Custom Card Dress Code Label Text */
+.custom-card__dress-code-label-text {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+  .custom-card__dress-code-label-text {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+}
+
+/* Custom Card Dress Code Text */
+.custom-card__dress-code-text {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .custom-card__dress-code-text {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+}
+
+/* Custom Card Buttons */
+.custom-card__buttons {
+  width: 100%;
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+/* Custom Card Button */
+.custom-card__button {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem var(--space-md);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .custom-card__button {
+    padding: 0.875rem 1.25rem;
+    font-size: var(--font-size-base);
+  }
+}
+
+.custom-card__button:hover {
+  opacity: 0.9;
+}
+
+.custom-card__button:active {
+  opacity: 0.8;
+}
+
+/* Custom Card Button Modifiers */
+.custom-card__button--dark {
+  background-color: var(--background-color-button-dark);
+  color: var(--text-color-muted);
+}
+
+.custom-card__button--primary {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+

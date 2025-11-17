@@ -1,0 +1,57 @@
+.custom-button {
+    width: 100%;
+    height: 43px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: auto;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 76, 255, 0.4);
+}
+
+.custom-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.custom-button:focus,
+.custom-button:focus-visible {
+    outline: none;
+}
+
+.custom-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 480px) {
+    .custom-button {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .custom-button {
+        transition: none;
+    }
+
+    .custom-button:hover:not(:disabled) {
+        transform: none;
+    }
+}
+
