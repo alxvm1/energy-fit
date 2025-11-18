@@ -38,28 +38,22 @@ export const PricingPlans: FC = () => {
                                     Возможность заниматься с тренером (первая тренировка бесплатно).
                                 </li>
                             </ul>
-                            <CustomButton
-                                className="pricing__button"
-                                onClick={() => handlePurchase('student-month')}
-                                aria-label="Купить абонемент 1 месяц за 3.000₽"
-                            >
-                                записаться
-                            </CustomButton>
+                            <div className="pricing__button-wrapper">
+                                <div className="pricing__card-image">
+                                    <img src={cardDark} alt="Карта абонемента" loading="lazy" />
+                                </div>
+                                <CustomButton
+                                    className="pricing__button"
+                                    onClick={() => handlePurchase('student-month')}
+                                    aria-label="Купить абонемент 1 месяц за 3.000₽"
+                                >
+                                    записаться
+                                </CustomButton>
+                            </div>
                         </div>
                     </article>
 
-                    <div className="pricing__image pricing__image--desktop pricing__image--pos-1-2 pricing__image--dark">
-                        <img src={cardDark} alt="Карта абонемента" loading="lazy" />
-                    </div>
-
-                    <div className="pricing__image pricing__image--desktop pricing__image--pos-2-1 pricing__image--blue">
-                        <img src={cardBlue} alt="Карта абонемента" loading="lazy" />
-                    </div>
-
                     <article className="pricing__second-card">
-                        <div className="pricing__image pricing__image--mobile pricing__image--dark">
-                            <img src={cardDark} alt="Карта абонемента" loading="lazy" />
-                        </div>
                         <div className="pricing__header">
                             <span className="pricing__duration">1 год</span>
                             <div className="pricing__arrow">
@@ -79,13 +73,18 @@ export const PricingPlans: FC = () => {
                                     Возможность заниматься с тренером (первая тренировка бесплатно).
                                 </li>
                             </ul>
-                            <CustomButton
-                                className="pricing__button"
-                                onClick={() => handlePurchase('student-year')}
-                                aria-label="Купить абонемент 1 год за 15.000₽"
-                            >
-                                записаться
-                            </CustomButton>
+                            <div className="pricing__button-wrapper pricing__button-wrapper--reversed">
+                                <div className="pricing__card-image">
+                                    <img src={cardBlue} alt="Карта абонемента" loading="lazy" />
+                                </div>
+                                <CustomButton
+                                    className="pricing__button"
+                                    onClick={() => handlePurchase('student-year')}
+                                    aria-label="Купить абонемент 1 год за 15.000₽"
+                                >
+                                    записаться
+                                </CustomButton>
+                            </div>
                         </div>
                     </article>
                 </div>

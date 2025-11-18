@@ -9,7 +9,7 @@ import './Footer.css'
 
 export const Footer: FC = () => {
   return (
-    <footer className="footer">
+    <footer className="footer full-width">
       <div className="footer__content">
         <div className='footer__logo-wrapper'>
           <MainLogoIcon className="footer__logo" />

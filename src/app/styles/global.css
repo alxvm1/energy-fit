@@ -94,7 +94,7 @@
 /* Global Styles - Mobile First */
 html {
   background-color: var(--background-color);
-  overflow-x: clip;
+  overflow-x: visible;
   width: 100%;
   position: relative;
 }
@@ -106,7 +106,7 @@ body {
   background-color: var(--background-color);
   padding-left: var(--container-padding-x);
   padding-right: var(--container-padding-x);
-  overflow-x: clip;
+  overflow-x: visible;
   width: 100%;
   box-sizing: border-box;
   margin: 0;
@@ -124,14 +124,14 @@ body {
 #root {
   min-height: 100vh;
   width: 100%;
-  overflow-x: clip;
+  overflow-x: visible;
   box-sizing: border-box;
 }
 
 /* Utility Classes */
 .full-width {
   margin-left: calc(-1 * var(--container-padding-x));
-  margin-right: calc(-1 * var(--container-padding-x));
+  margin-right: calc(-1 * var(--container-padding-x) * 0.99);
   width: calc(100% + 2 * var(--container-padding-x));
   box-sizing: border-box;
 }

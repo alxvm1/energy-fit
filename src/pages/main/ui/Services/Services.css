@@ -1,0 +1,16 @@
+.services-title{}
+
+.services__title-text {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-blue-500);
+
+    @media (min-width: 1280px) {
+        font-size: 48px;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--color-blue-500);
+    }
+}

@@ -1,38 +1,50 @@
-/* Card Carousel Block */
+
 .card-carousel {
   width: 100%;
   padding: var(--space-md) 0;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .card-carousel {
-    padding: 1.5rem 0;
-  }
-}
-
-/* Card Carousel Swiper */
 .card-carousel__swiper {
   width: 100%;
+  overflow: visible;
 }
 
-@media (min-width: 768px) {
-  .card-carousel__swiper {
-    overflow: hidden;
+@media (min-width: 1280px) {
+  .card-carousel__swiper .swiper-wrapper {
+    overflow: visible;
   }
 }
 
-/* Hide Swiper Navigation */
 .card-carousel__swiper .swiper-button-next,
 .card-carousel__swiper .swiper-button-prev,
 .card-carousel__swiper .swiper-pagination {
   display: none;
 }
 
-/* Card Carousel Slide */
 .card-carousel__slide {
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .card-carousel__slide {
+    width: auto;
+    min-width: 700px;
+    max-width: 927px;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card-carousel__slide .custom-card {
+    width: 100%;
+    min-width: 700px;
+    max-width: 927px;
+    flex-shrink: 0;
+  }
 }
 

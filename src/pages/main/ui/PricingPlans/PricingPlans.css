@@ -1,7 +1,3 @@
-/* ========================================
-   BASE STYLES (Mobile-first)
-======================================== */
-
 .pricing {
     width: 100%;
     padding: var(--space-xl) var(--space-md);
@@ -17,7 +13,6 @@
     margin-bottom: 0;
 }
 
-/* === TITLES === */
 .pricing__title {
     font-family: var(--font-family);
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -43,7 +38,6 @@
     opacity: 0.8;
 }
 
-/* === GRID === */
 .pricing__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -57,7 +51,6 @@
     grid-template-rows: auto auto;
 }
 
-/* === CARDS === */
 .pricing__first-card,
 .pricing__second-card {
     display: flex;
@@ -68,12 +61,16 @@
     padding: 24px;
     gap: 20px;
     transition: all 0.3s ease;
+
+    @media (min-width: 1280px) {
+        min-width: 750px;
+    }
 }
 
 .pricing__first-card:hover,
 .pricing__second-card:hover {
     border-color: rgba(49, 76, 255, 0.5);
-    box-shadow: 0 8px 24px rgba(49, 76, 255, 0.15);
+    box-shadow: 0 8px 24px rgba(49, 76, 255, 0.25);
 }
 
 .pricing__card--highlighted {
@@ -82,10 +79,9 @@
 
 .pricing__card--highlighted:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 24px rgba(49, 76, 255, 0.15);
+    box-shadow: 0 8px 24px rgba(49, 76, 255, 0.25);
 }
 
-/* === HEADER === */
 .pricing__header {
     display: flex;
     justify-content: space-between;
@@ -126,15 +122,14 @@
     white-space: nowrap;
 }
 
-/* === CONTENT === */
 .pricing__content {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: stretch;
+    position: relative;
 }
 
-/* === FEATURES === */
 .pricing__features {
     display: flex;
     flex-direction: column;
@@ -164,15 +159,27 @@
     line-height: 1.5;
 }
 
-/* === BUTTON === */
+.pricing__button-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    min-height: 48px;
+}
+
 .pricing__button {
     flex-shrink: 0;
-    width: auto;
+    width: 50%;
     min-width: 120px;
     min-height: 48px;
     padding-left: 22px;
     padding-right: 22px;
     align-self: flex-end;
+}
+
+.pricing__button-wrapper--reversed .pricing__button {
+    align-self: flex-start;
+    margin-left: auto;
 }
 
 .pricing__button:active:not(:disabled) {
@@ -190,43 +197,38 @@
     outline-offset: 2px;
 }
 
-/* === IMAGE === */
-.pricing__image {
-    width: 140px;
+.pricing__card-image {
+    position: absolute;
+    right: 0;
+    bottom: -28px;
+    width: 50%;
+    max-width: 110px;
     height: auto;
+    z-index: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
 }
 
-.pricing__image img {
+.pricing__button-wrapper--reversed .pricing__card-image {
+    left: 0;
+    right: auto;
+}
+
+.pricing__card-image img {
     width: 100%;
     height: auto;
     display: block;
+    transform: rotate(20deg);
 }
 
-.pricing__image--dark img {
-    transform: rotate(-8deg);
-}
-
-.pricing__image--blue img {
-    transform: rotate(8deg);
-}
-
-.pricing__image--mobile img {
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
-}
-
-.pricing__image--desktop {
-    display: none;
+.pricing__button-wrapper--reversed .pricing__card-image img {
+    transform: rotate(-20deg);
 }
 
 .pricing__spacer {
     display: none;
 }
 
-/* === RESPONSIVE ARROW === */
-/* Mobile: маленькая стрелка */
 @media (max-width: 719px) {
     .pricing__arrow {
         width: 40px;
@@ -234,21 +236,14 @@
     }
 }
 
-/* ========================================
-   BREAKPOINT: 368px (Small Mobile)
-======================================== */
 @media (min-width: 368px) {
 
-    /* Небольшие улучшения для больших телефонов */
     .pricing__first-card,
     .pricing__second-card {
         padding: 24px;
     }
 }
 
-/* ========================================
-   BREAKPOINT: 720px (Tablet)
-======================================== */
 @media (min-width: 720px) {
     .pricing {
         padding: var(--space-xl) var(--space-lg);
@@ -281,15 +276,8 @@
         font-size: 15px;
         line-height: 1.5;
     }
-
-    .pricing__image {
-        width: 180px;
-    }
 }
 
-/* ========================================
-   BREAKPOINT: 1280px (Desktop)
-======================================== */
 @media (min-width: 1280px) {
     .pricing {
         padding: var(--space-xl) var(--space-xl);
@@ -299,7 +287,6 @@
         max-width: 1700px;
     }
 
-    /* === GRID LAYOUT === */
     .pricing__grid--students,
     .pricing__grid--standard {
         grid-template-columns: repeat(4, 1fr);
@@ -307,24 +294,9 @@
         gap: 36px;
     }
 
-    /* === GRID POSITIONING === */
     .pricing__first-card {
         grid-column: 1 / 4;
         grid-row: 1;
-    }
-
-    .pricing__image--pos-1-2 {
-        grid-column: 4;
-        grid-row: 1;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .pricing__image--pos-2-1 {
-        grid-column: 1;
-        grid-row: 2;
-        justify-content: flex-end;
-        align-items: center;
     }
 
     .pricing__second-card {
@@ -332,7 +304,6 @@
         grid-row: 2;
     }
 
-    /* Standard section grid */
     .pricing__grid--standard .pricing__first-card {
         grid-column: 1 / 4;
         grid-row: 1;
@@ -359,14 +330,12 @@
         height: auto;
     }
 
-    /* === CARDS === */
     .pricing__first-card,
     .pricing__second-card {
         padding: 30px 55px;
         gap: 22px;
     }
 
-    /* === HEADER === */
     .pricing__arrow {
         width: auto;
         flex-grow: 1;
@@ -379,14 +348,12 @@
         font-size: 2rem;
     }
 
-    /* === CONTENT === */
     .pricing__content {
         flex-direction: row;
         gap: 45px;
         align-items: stretch;
     }
 
-    /* === FEATURES === */
     .pricing__features {
         gap: 12px;
     }
@@ -395,83 +362,28 @@
         font-size: 15px;
         line-height: 1.35;
     }
-
-    /* === IMAGE === */
-    .pricing__image--desktop {
-        display: flex;
-        width: 400px;
-        max-width: 400px;
-    }
-
-    .pricing__image--desktop img {
-        max-width: 350px;
-        width: 100%;
-        height: auto;
-        filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
-    }
-
-    .pricing__image--mobile {
-        display: none;
-    }
 }
 
-/* ========================================
-   BREAKPOINT: 1440px (Large Desktop)
-======================================== */
-@media (min-width: 1440px) {
-    .pricing__image--desktop {
-        max-width: 280px;
-    }
-
-    .pricing__image--desktop img {
-        max-width: 280px;
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* ========================================
-   BREAKPOINT: 1600px (Wide Desktop)
-======================================== */
-@media (min-width: 1600px) {
-    .pricing__image--desktop {
-        max-width: 320px;
-    }
-
-    .pricing__image--desktop img {
-        max-width: 320px;
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* ========================================
-   BREAKPOINT: 1920px (Full HD)
-======================================== */
 @media (min-width: 1920px) {
     .pricing__section {
         max-width: 1700px;
     }
 
-    /* === GRID === */
     .pricing__grid--students,
     .pricing__grid--standard {
         gap: 36px;
     }
 
-    /* === CARDS === */
     .pricing__first-card,
     .pricing__second-card {
         padding: 30px 55px;
         gap: 22px;
     }
 
-    /* === CONTENT === */
     .pricing__content {
         gap: 45px;
     }
 
-    /* === FEATURES === */
     .pricing__features {
         gap: 12px;
     }
@@ -481,26 +393,11 @@
         line-height: 1.35;
     }
 
-    /* === HEADER === */
     .pricing__arrow {
         max-width: 200px;
     }
-
-    /* === IMAGE === */
-    .pricing__image--desktop {
-        width: 400px;
-        max-width: 400px;
-    }
-
-    .pricing__image--desktop img {
-        max-width: 350px;
-        height: auto;
-    }
 }
 
-/* ========================================
-   ACCESSIBILITY
-======================================== */
 @media (prefers-reduced-motion: reduce) {
 
     .pricing__first-card,

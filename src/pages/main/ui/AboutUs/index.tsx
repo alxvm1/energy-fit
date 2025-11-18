@@ -1,4 +1,5 @@
 import { type FC } from 'react'
+import { CustomButton } from '@/shared/ui'
 import './AboutUs.css'
 
 export const AboutUs: FC = () => {
@@ -20,9 +21,9 @@ export const AboutUs: FC = () => {
         </p>
       </div>
       <div className="about-us__button-wrapper">
-        <button className="about-us__button" type="button">
-          <span className="about-us__button-text">записаться</span>
-        </button>
+        <CustomButton className="about-us__button">
+          записаться
+        </CustomButton>
       </div>
     </section>
   )

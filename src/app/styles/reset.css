@@ -41,7 +41,6 @@ h4 {
 }
 
 p {
-  text-wrap: pretty;
   overflow-wrap: break-word;
 }
 

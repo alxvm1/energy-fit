@@ -39,8 +39,14 @@ export const CardCarousel: FC<ICardCarouselProps> = ({ children, className }) =>
         initialSlide={defaultActiveIndex}
         speed={500}
         breakpoints={{
-          768: {
-            slidesPerView: 3,
+          368: {
+            slidesPerView: 1,
+            spaceBetween: 32,
+            centeredSlides: true,
+            allowTouchMove: true,
+          },
+          1280: {
+            slidesPerView: 'auto',
             spaceBetween: 32,
             centeredSlides: true,
             allowTouchMove: true,

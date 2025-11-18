@@ -1,99 +1,135 @@
-/* Navbar Block */
 .navbar {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  gap: var(--space-md);
-  margin-bottom: var(--space-md);
+  background: var(--background-navbar, #111);
 }
 
-@media (min-width: 768px) {
-  .navbar {
-    margin-bottom: var(--space-lg);
-  }
-}
-
-/* Navbar Header Element */
+/* ===== Верхняя черная полоса ===== */
 .navbar__header {
   display: flex;
+  align-items: center;
+  height: 48px;
   justify-content: space-between;
-  align-items: center;
-  padding-left: var(--container-padding-x);
-  padding-right: var(--container-padding-x);
-  padding-top: 0.75rem;
+  padding: 0 1rem;
+  background: #111;
 }
 
-@media (min-width: 768px) {
-  .navbar__header {
-    padding-top: 1.5rem;
-  }
-}
-
-/* Navbar Logo Wrapper */
 .navbar__logo-wrapper {
-  display: flex;
-  align-items: center;
+  display: flex; align-items: center;
 }
 
-/* Navbar Logo */
-.navbar__logo {
-  width: 1.5rem;
-  height: 1.5rem;
-}
+.navbar__mobile-logo {
+  width: 32px; height: 32px;
+  display: block;
 
-@media (min-width: 768px) {
-  .navbar__logo {
-    width: 2rem;
-    height: 2rem;
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}
+.navbar__desktop-logo {
+  display: none;
+  @media (min-width: 1280px) {
+    width: 45px; height: 45px;
+    display: block;
   }
 }
 
-/* Navbar Menu */
-.navbar__menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-/* Navbar Menu Icon */
+/* Три точки: только mobile */
 .navbar__menu-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 32px; height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (min-width: 768px) {
-  .navbar__menu-icon {
-    width: 2rem;
-    height: 2rem;
+/* Меню: скрыто mobile */
+.navbar__menu {
+  display: none;
+
+  @media (min-width: 1280px) {
+      display: flex;
+      min-width: 1280px;
+      max-width: 1280px;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
   }
 }
 
-/* Navbar Banner */
+/* ===== Цветная/логотипная полоса (mobile) ===== */
 .navbar__banner {
   width: 100%;
-  height: 3.5rem;
-  background-color: var(--primary-color);
+  background: var(--primary-color, #3150FF); /* mobile — цветная */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  min-height: 70px;
 }
 
-@media (min-width: 768px) {
-  .navbar__banner {
-    height: 4rem;
-  }
-}
-
-/* Navbar Main Logo */
+/* Центральный лого внутри баннера */
 .navbar__main-logo {
-  width: 5rem;
-  height: 2.5rem;
+  width: 200px; height: 56px;
 }
 
-@media (min-width: 768px) {
+/* ===== DESKTOP (1280px+) ===== */
+@media (min-width: 1280px) {
+  .navbar {
+    /* фон: черная полоса + "баннер" может быть поверх картинки (ваш второй скриншот) */
+    background: #111;
+  }
+  .navbar__header {
+    height: 82px;
+    padding: 0 2.5rem;
+    gap: 0;
+    /* выровнять по центру через flex-grow/flex-basis? */
+  }
+  .navbar__logo { width: 60px; height: 60px; }
+
+  .navbar__menu-item {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0 16px;
+    transition: color 0.2s;
+  }
+  .navbar__menu-item:hover {
+    color: var(--primary-color, #5374ff);
+  }
+  .navbar__menu-button {
+    display: flex !important;
+    margin: 0 0 0 40px !important;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 32px !important;
+    font-size: 20px;
+    border-radius: 10px;
+    background: var(--primary-color, #5374ff);
+    color: #fff;
+    max-width: 182px;
+  }
+  .navbar__menu-icon { display: none; } /* убираем три точки на desktop */
+
+  /* Баннер: вместо полосы — картинка на весь баннер, логотип по центру */
+  .navbar__banner {
+    min-height: 230px;
+    height: 230px;
+    background-color: var(--color-blue-500);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding/margins при необходимости */
+  }
   .navbar__main-logo {
-    width: 5.875rem;
-    height: 3rem;
+    position: absolute; /* или просто по центру */
+    width: 300px;
+    height: 150px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
