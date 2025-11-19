@@ -1,4 +1,4 @@
-import mockImage from '@/shared/assets/images/mock.png'
+// import mockImage from '@/shared/assets/images/mock.png'
 import { CustomButton, CustomInput, CustomSelect, CustomTextarea } from '@/shared/ui'
 import { useState, type ChangeEvent, type FC, type FormEvent } from "react"
 import './SignUpForm.css'
