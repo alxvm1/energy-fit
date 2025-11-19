@@ -112,14 +112,14 @@ export const SignUpForm: FC = () => {
                         отправить
                     </CustomButton>
                 </form>
-                <div className="form__image">
+                {/* <div className="form__image">
                     <img
                         src={mockImage}
                         alt="Форма записи"
                         loading="lazy"
                         decoding="async"
                     />
-                </div>
+                </div> */}
             </div>
             <div className="form__description">
                 <p className="form__description-text">
