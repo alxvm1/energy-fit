@@ -65,11 +65,9 @@
     font-weight: 400;
     color: var(--text-color-muted);
     margin-top: var(--space-lg);
-    max-width: 50%;
 }
 
 .form__description-text {
-    text-wrap: pretty;
     hyphens: auto;
 }
 
