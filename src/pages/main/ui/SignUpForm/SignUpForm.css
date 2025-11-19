@@ -10,7 +10,6 @@
 
 .form__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
     width: 100%;
     min-height: var(--form-height);
